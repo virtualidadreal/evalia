@@ -160,6 +160,10 @@ function Navbar() {
             <a
               key={link.href}
               href={link.href}
+              onClick={(e) => {
+                e.preventDefault()
+                document.querySelector(link.href)?.scrollIntoView({ behavior: 'smooth' })
+              }}
               className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-smooth hover:text-foreground"
             >
               {link.label}
@@ -172,14 +176,6 @@ function Navbar() {
             className="ml-2"
           >
             Iniciar sesión
-          </Button>
-          <Button
-            variant="premium"
-            size="sm"
-            onClick={() => navigate('/register')}
-            className="ml-1"
-          >
-            Empezar gratis
           </Button>
         </nav>
 
@@ -197,7 +193,11 @@ function Navbar() {
                 <a
                   key={link.href}
                   href={link.href}
-                  onClick={() => setOpen(false)}
+                  onClick={(e) => {
+                    e.preventDefault()
+                    setOpen(false)
+                    document.querySelector(link.href)?.scrollIntoView({ behavior: 'smooth' })
+                  }}
                   className="text-base font-medium text-foreground"
                 >
                   {link.label}
@@ -212,15 +212,6 @@ function Navbar() {
                 }}
               >
                 Iniciar sesión
-              </Button>
-              <Button
-                variant="premium"
-                onClick={() => {
-                  setOpen(false)
-                  navigate('/register')
-                }}
-              >
-                Empezar gratis
               </Button>
             </div>
           </SheetContent>
@@ -262,8 +253,12 @@ function Hero() {
             Empezar gratis — 14 días
             <ArrowRight className="size-4" />
           </Button>
-          <Button variant="outline" size="xl" asChild>
-            <a href="#features">Ver cómo funciona</a>
+          <Button
+            variant="outline"
+            size="xl"
+            onClick={() => document.querySelector('#features')?.scrollIntoView({ behavior: 'smooth' })}
+          >
+            Ver cómo funciona
           </Button>
         </div>
 
