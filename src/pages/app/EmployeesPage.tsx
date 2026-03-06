@@ -338,7 +338,7 @@ function EmployeeFormDialog({
   open,
   onOpenChange,
   editingEmployee,
-  orgId,
+  orgId: _orgId,
   departments,
   employees,
   onSubmitCreate,
@@ -590,8 +590,8 @@ interface CSVImportDialogProps {
 function CSVImportDialog({
   open,
   onOpenChange,
-  orgId,
-  departments,
+  orgId: _orgId,
+  departments: _departments,
   onImport,
   isImporting,
 }: CSVImportDialogProps) {

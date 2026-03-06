@@ -2,8 +2,6 @@ import type {
   Evaluation,
   EvalTemplate,
   Competency,
-  EvalQuestion,
-  EvaluationResponse,
   Insight,
   CompetencyScore,
 } from '@/types/database'

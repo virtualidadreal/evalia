@@ -8,7 +8,6 @@ import {
   LinkIcon,
   Save,
   Send,
-  Sparkles,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import {
@@ -118,7 +117,6 @@ export default function EvaluatePublicPage() {
 
   // Progress
   const requiredQuestions = questions.filter((q) => q.required)
-  const answeredRequired = requiredQuestions.filter((q) => responses[q.id]?.value != null && responses[q.id]?.value !== '').length
   const totalAnswered = questions.filter((q) => responses[q.id]?.value != null && responses[q.id]?.value !== '').length
   const progressPercent = questions.length > 0 ? Math.round((totalAnswered / questions.length) * 100) : 0
 

@@ -27,7 +27,7 @@ export function useUpdateMemberRole() {
   const queryClient = useQueryClient()
 
   return useMutation({
-    mutationFn: async ({ id, orgId, role }: { id: string; orgId: string; role: OrgRole }) => {
+    mutationFn: async ({ id, orgId: _orgId, role }: { id: string; orgId: string; role: OrgRole }) => {
       const { data, error } = await (supabase.from('org_members') as any)
         .update({ role })
         .eq('id', id)
@@ -51,7 +51,7 @@ export function useRemoveMember() {
   const queryClient = useQueryClient()
 
   return useMutation({
-    mutationFn: async ({ id, orgId }: { id: string; orgId: string }) => {
+    mutationFn: async ({ id, orgId: _orgId }: { id: string; orgId: string }) => {
       const { error } = await (supabase.from('org_members') as any)
         .delete()
         .eq('id', id)

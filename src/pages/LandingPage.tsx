@@ -15,7 +15,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import { PricingCard } from '@/components/landing/PricingCard'
-import { PRICING, APP_NAME, BRAND_NAME, BRAND_TAGLINE } from '@/lib/constants'
+import { PRICING, BRAND_NAME, BRAND_TAGLINE } from '@/lib/constants'
 
 /* ------------------------------------------------------------------ */
 /*  Data                                                               */

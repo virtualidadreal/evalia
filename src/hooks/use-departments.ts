@@ -70,7 +70,7 @@ export function useDeleteDepartment() {
   const queryClient = useQueryClient()
 
   return useMutation({
-    mutationFn: async ({ id, orgId }: { id: string; orgId: string }) => {
+    mutationFn: async ({ id, orgId: _orgId }: { id: string; orgId: string }) => {
       const { error } = await (supabase.from('departments') as any)
         .delete()
         .eq('id', id)

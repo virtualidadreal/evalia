@@ -10,7 +10,7 @@ import {
 } from '@/hooks/use-templates'
 import { PREDEFINED_TEMPLATES } from '@/lib/ai-evaluation'
 import type { EvalTemplate, EvalType } from '@/types/database'
-import { cn } from '@/lib/utils'
+import { cn as _cn } from '@/lib/utils'
 
 // UI components
 import { Button } from '@/components/ui/button'

@@ -9,7 +9,6 @@ import {
 } from '@/hooks/use-results'
 import { analyzeResults } from '@/lib/results-analyzer'
 import type {
-  Campaign,
   AIReport,
   ReportType,
   SubscriptionPlan,
@@ -60,7 +59,6 @@ import {
   Loader2,
   X,
   CalendarDays,
-  Eye,
 } from 'lucide-react'
 
 // ---------------------------------------------------------------------------
@@ -430,9 +428,9 @@ function EvalPDFDocument({
                 <View
                   style={[
                     pdfStyles.insightBullet,
-                    insight.type === 'strength' && pdfStyles.strengthBullet,
-                    insight.type === 'risk' && pdfStyles.riskBullet,
-                    insight.type === 'opportunity' && pdfStyles.opportunityBullet,
+                    insight.type === 'strength' ? pdfStyles.strengthBullet : {},
+                    insight.type === 'risk' ? pdfStyles.riskBullet : {},
+                    insight.type === 'opportunity' ? pdfStyles.opportunityBullet : {},
                   ]}
                 />
                 <Text style={pdfStyles.insightText}>{insight.text}</Text>
